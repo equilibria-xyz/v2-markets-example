@@ -54,7 +54,7 @@ console.log(
   "Please use the following command to fork the chain so we can simulate responses:"
 );
 console.log(
-  `anvil --fork-url https://arb-goerli.g.alchemy.com/v2/${AlchemyProdKey} -m "${mnemonic}"`
+  `\x1b[33manvil --fork-url https://arb-goerli.g.alchemy.com/v2/${AlchemyProdKey} -m "${mnemonic}" \x1b[0m`
 );
 
 // Wait for the enter key to continue the script
