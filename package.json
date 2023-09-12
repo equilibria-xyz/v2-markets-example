@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "@pythnetwork/pyth-evm-js": "^1.25.0",
+    "date-fns": "^2.30.0",
+    "viem": "^1.10.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "esno": "^0.17.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "start": "esno src/index.ts"
+  },
+  "name": "example-read-write",
+  "version": "1.0.0",
+  "description": "A simple typescript repo that contains the required code to read and write to Perennial's V2 markets.",
+  "keywords": [
+    "perennial",
+    "testnet",
+    "anvil",
+    "fork"
+  ],
+  "author": "l3wi",
+  "license": "ISC"
+}

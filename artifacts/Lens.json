@@ -1,0 +1,2619 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Lens",
+  "sourceName": "contracts/Lens.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPythOracle",
+          "name": "pyth",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "version",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "updateData",
+          "type": "bytes"
+        }
+      ],
+      "name": "commit",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract IPythOracle",
+              "name": "pyth",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "version",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "updateData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct PriceCommitData[]",
+          "name": "commits",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "contract IMarket[]",
+          "name": "markets",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "snapshot",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes[]",
+              "name": "commitmentStatus",
+              "type": "bytes[]"
+            },
+            {
+              "internalType": "bytes[]",
+              "name": "updateStatus",
+              "type": "bytes[]"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "contract IMarket",
+                      "name": "market",
+                      "type": "address"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fundingFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "interestFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "positionFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "oracleFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "riskFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "maxPendingGlobal",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "maxPendingLocal",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerRewardRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "longRewardRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "shortRewardRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "settlementFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "takerCloseAlways",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "makerCloseAlways",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "closed",
+                          "type": "bool"
+                        }
+                      ],
+                      "internalType": "struct MarketParameter",
+                      "name": "parameter",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maintenance",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "takerFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "takerSkewFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "takerImpactFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerImpactFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerLimit",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "efficiencyLimit",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "liquidationFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "minLiquidationFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maxLiquidationFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "minRate",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "maxRate",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "targetRate",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "targetUtilization",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UJumpRateUtilizationCurve6",
+                          "name": "utilizationCurve",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "k",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "max",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct PController6",
+                          "name": "pController",
+                          "type": "tuple"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "minMaintenance",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "virtualTaker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "staleAfter",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "makerReceiveOnly",
+                          "type": "bool"
+                        }
+                      ],
+                      "internalType": "struct RiskParameter",
+                      "name": "riskParameter",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "currentId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "latestId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "protocolFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "oracleFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "riskFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "donation",
+                          "type": "uint256"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            },
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_skew",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct PAccumulator6",
+                          "name": "pAccumulator",
+                          "type": "tuple"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "latestPrice",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Global",
+                      "name": "global",
+                      "type": "tuple"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "oracle",
+                      "type": "address"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "position",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "nextPosition",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position[]",
+                      "name": "pendingPositions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "bool",
+                          "name": "valid",
+                          "type": "bool"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "makerValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "longValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "shortValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "makerReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "longReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "shortReward",
+                          "type": "tuple"
+                        }
+                      ],
+                      "internalType": "struct Version[]",
+                      "name": "versions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "price",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "valid",
+                          "type": "bool"
+                        }
+                      ],
+                      "internalType": "struct OracleVersion",
+                      "name": "latestOracleVersion",
+                      "type": "tuple"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "currentOracleVersion",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct Lens.MarketSnapshot[]",
+                  "name": "marketSnapshots",
+                  "type": "tuple[]"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "contract IMarket",
+                      "name": "market",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "account",
+                      "type": "address"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "currentId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "latestId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "reward",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "protection",
+                          "type": "uint256"
+                        }
+                      ],
+                      "internalType": "struct Local",
+                      "name": "local",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "position",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "nextPosition",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position[]",
+                      "name": "pendingPositions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "bool",
+                          "name": "valid",
+                          "type": "bool"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "makerValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "longValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "shortValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "makerReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "longReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "shortReward",
+                          "type": "tuple"
+                        }
+                      ],
+                      "internalType": "struct Version[]",
+                      "name": "versions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "internalType": "Fixed6[]",
+                      "name": "prices",
+                      "type": "int256[]"
+                    }
+                  ],
+                  "internalType": "struct Lens.MarketAccountSnapshot[]",
+                  "name": "marketAccountSnapshots",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Lens.SnapshotResult",
+              "name": "preUpdate",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "contract IMarket",
+                      "name": "market",
+                      "type": "address"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fundingFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "interestFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "positionFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "oracleFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "riskFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "maxPendingGlobal",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "maxPendingLocal",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerRewardRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "longRewardRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "shortRewardRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "settlementFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "takerCloseAlways",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "makerCloseAlways",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "closed",
+                          "type": "bool"
+                        }
+                      ],
+                      "internalType": "struct MarketParameter",
+                      "name": "parameter",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maintenance",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "takerFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "takerSkewFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "takerImpactFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerImpactFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "makerLimit",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "efficiencyLimit",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "liquidationFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "minLiquidationFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maxLiquidationFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "minRate",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "maxRate",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "targetRate",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "targetUtilization",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UJumpRateUtilizationCurve6",
+                          "name": "utilizationCurve",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "k",
+                              "type": "uint256"
+                            },
+                            {
+                              "internalType": "UFixed6",
+                              "name": "max",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct PController6",
+                          "name": "pController",
+                          "type": "tuple"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "minMaintenance",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "virtualTaker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "staleAfter",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "makerReceiveOnly",
+                          "type": "bool"
+                        }
+                      ],
+                      "internalType": "struct RiskParameter",
+                      "name": "riskParameter",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "currentId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "latestId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "protocolFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "oracleFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "riskFee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "donation",
+                          "type": "uint256"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            },
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_skew",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct PAccumulator6",
+                          "name": "pAccumulator",
+                          "type": "tuple"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "latestPrice",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Global",
+                      "name": "global",
+                      "type": "tuple"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "oracle",
+                      "type": "address"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "position",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "nextPosition",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position[]",
+                      "name": "pendingPositions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "bool",
+                          "name": "valid",
+                          "type": "bool"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "makerValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "longValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "shortValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "makerReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "longReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "shortReward",
+                          "type": "tuple"
+                        }
+                      ],
+                      "internalType": "struct Version[]",
+                      "name": "versions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "price",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "valid",
+                          "type": "bool"
+                        }
+                      ],
+                      "internalType": "struct OracleVersion",
+                      "name": "latestOracleVersion",
+                      "type": "tuple"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "currentOracleVersion",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct Lens.MarketSnapshot[]",
+                  "name": "marketSnapshots",
+                  "type": "tuple[]"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "contract IMarket",
+                      "name": "market",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "account",
+                      "type": "address"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "currentId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "latestId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "reward",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "protection",
+                          "type": "uint256"
+                        }
+                      ],
+                      "internalType": "struct Local",
+                      "name": "local",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "position",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position",
+                      "name": "nextPosition",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "timestamp",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "maker",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "long",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "short",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "fee",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "UFixed6",
+                          "name": "keeper",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "collateral",
+                          "type": "int256"
+                        },
+                        {
+                          "internalType": "Fixed6",
+                          "name": "delta",
+                          "type": "int256"
+                        }
+                      ],
+                      "internalType": "struct Position[]",
+                      "name": "pendingPositions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "bool",
+                          "name": "valid",
+                          "type": "bool"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "makerValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "longValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "Fixed6",
+                              "name": "_value",
+                              "type": "int256"
+                            }
+                          ],
+                          "internalType": "struct Accumulator6",
+                          "name": "shortValue",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "makerReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "longReward",
+                          "type": "tuple"
+                        },
+                        {
+                          "components": [
+                            {
+                              "internalType": "UFixed6",
+                              "name": "_value",
+                              "type": "uint256"
+                            }
+                          ],
+                          "internalType": "struct UAccumulator6",
+                          "name": "shortReward",
+                          "type": "tuple"
+                        }
+                      ],
+                      "internalType": "struct Version[]",
+                      "name": "versions",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "internalType": "Fixed6[]",
+                      "name": "prices",
+                      "type": "int256[]"
+                    }
+                  ],
+                  "internalType": "struct Lens.MarketAccountSnapshot[]",
+                  "name": "marketAccountSnapshots",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Lens.SnapshotResult",
+              "name": "postUpdate",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Lens.SnapshotReturnValue",
+          "name": "result",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "snapshotMarket",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract IMarket",
+              "name": "market",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "UFixed6",
+                  "name": "fundingFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "interestFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "positionFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "oracleFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "riskFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPendingGlobal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPendingLocal",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "makerRewardRate",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "longRewardRate",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "shortRewardRate",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "settlementFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "takerCloseAlways",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "makerCloseAlways",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "closed",
+                  "type": "bool"
+                }
+              ],
+              "internalType": "struct MarketParameter",
+              "name": "parameter",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "UFixed6",
+                  "name": "maintenance",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "takerFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "takerSkewFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "takerImpactFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "makerFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "makerImpactFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "makerLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "efficiencyLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "liquidationFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "minLiquidationFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maxLiquidationFee",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "minRate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "UFixed6",
+                      "name": "maxRate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "UFixed6",
+                      "name": "targetRate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "UFixed6",
+                      "name": "targetUtilization",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UJumpRateUtilizationCurve6",
+                  "name": "utilizationCurve",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "k",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "UFixed6",
+                      "name": "max",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct PController6",
+                  "name": "pController",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "minMaintenance",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "virtualTaker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "staleAfter",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "makerReceiveOnly",
+                  "type": "bool"
+                }
+              ],
+              "internalType": "struct RiskParameter",
+              "name": "riskParameter",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "currentId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "latestId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "protocolFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "oracleFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "riskFee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "donation",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    },
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_skew",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct PAccumulator6",
+                  "name": "pAccumulator",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "latestPrice",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Global",
+              "name": "global",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "oracle",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "long",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "short",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "keeper",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "delta",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Position",
+              "name": "position",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "long",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "short",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "keeper",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "delta",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Position",
+              "name": "nextPosition",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "long",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "short",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "keeper",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "delta",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Position[]",
+              "name": "pendingPositions",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bool",
+                  "name": "valid",
+                  "type": "bool"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct Accumulator6",
+                  "name": "makerValue",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct Accumulator6",
+                  "name": "longValue",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct Accumulator6",
+                  "name": "shortValue",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "_value",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UAccumulator6",
+                  "name": "makerReward",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "_value",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UAccumulator6",
+                  "name": "longReward",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "_value",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UAccumulator6",
+                  "name": "shortReward",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct Version[]",
+              "name": "versions",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "price",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "valid",
+                  "type": "bool"
+                }
+              ],
+              "internalType": "struct OracleVersion",
+              "name": "latestOracleVersion",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "currentOracleVersion",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Lens.MarketSnapshot",
+          "name": "marketSnapshot",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "snapshotMarketAccount",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract IMarket",
+              "name": "market",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "currentId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "latestId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "reward",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "protection",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Local",
+              "name": "local",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "long",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "short",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "keeper",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "delta",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Position",
+              "name": "position",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "long",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "short",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "keeper",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "delta",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Position",
+              "name": "nextPosition",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "maker",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "long",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "short",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "fee",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "UFixed6",
+                  "name": "keeper",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "collateral",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "Fixed6",
+                  "name": "delta",
+                  "type": "int256"
+                }
+              ],
+              "internalType": "struct Position[]",
+              "name": "pendingPositions",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bool",
+                  "name": "valid",
+                  "type": "bool"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct Accumulator6",
+                  "name": "makerValue",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct Accumulator6",
+                  "name": "longValue",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "Fixed6",
+                      "name": "_value",
+                      "type": "int256"
+                    }
+                  ],
+                  "internalType": "struct Accumulator6",
+                  "name": "shortValue",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "_value",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UAccumulator6",
+                  "name": "makerReward",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "_value",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UAccumulator6",
+                  "name": "longReward",
+                  "type": "tuple"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "UFixed6",
+                      "name": "_value",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct UAccumulator6",
+                  "name": "shortReward",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct Version[]",
+              "name": "versions",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "Fixed6[]",
+              "name": "prices",
+              "type": "int256[]"
+            }
+          ],
+          "internalType": "struct Lens.MarketAccountSnapshot",
+          "name": "marketAccountSnapshot",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarket",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "updateNoop",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506140ab806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806323e46fea1461005c578063558484641461008c5780636eb79f6a146100bc5780637987bd7f146100ec5780637e8306ad1461011c575b600080fd5b61007660048036038101906100719190611fe1565b61014c565b6040516100839190612ea4565b60405180910390f35b6100a660048036038101906100a19190612ec6565b610636565b6040516100b39190612f50565b60405180910390f35b6100d660048036038101906100d19190612f72565b61073f565b6040516100e3919061309b565b60405180910390f35b61010660048036038101906101019190612ec6565b610e87565b604051610113919061317f565b60405180910390f35b610136600480360381019061013191906131a1565b611598565b6040516101439190612f50565b60405180910390f35b6101546116d3565b6000835167ffffffffffffffff81111561017157610170611b46565b5b6040519080825280602002602001820160405280156101aa57816020015b610197611707565b81526020019060019003908161018f5790505b5090506000845167ffffffffffffffff8111156101ca576101c9611b46565b5b60405190808252806020026020018201604052801561020357816020015b6101f06117b1565b8152602001906001900390816101e85790505b50905060005b85518110156102a85761023586828151811061022857610227613238565b5b602002602001015161073f565b83828151811061024857610247613238565b5b602002602001018190525061027786828151811061026957610268613238565b5b602002602001015186610e87565b82828151811061028a57610289613238565b5b602002602001018190525080806102a090613296565b915050610209565b508183604001516000018190525080836040015160200181905250855167ffffffffffffffff8111156102de576102dd611b46565b5b60405190808252806020026020018201604052801561031157816020015b60608152602001906001900390816102fc5790505b50836000018190525060005b86518110156103fe576103c987828151811061033c5761033b613238565b5b60200260200101516000015188838151811061035b5761035a613238565b5b60200260200101516020015189848151811061037a57610379613238565b5b6020026020010151604001518a858151811061039957610398613238565b5b6020026020010151606001518b86815181106103b8576103b7613238565b5b602002602001015160800151611598565b846000015182815181106103e0576103df613238565b5b602002602001018190525080806103f690613296565b91505061031d565b50845167ffffffffffffffff81111561041a57610419611b46565b5b60405190808252806020026020018201604052801561044d57816020015b60608152602001906001900390816104385790505b50836020018190525060005b85518110156104bb5761048686828151811061047857610477613238565b5b602002602001015186610636565b8460200151828151811061049d5761049c613238565b5b602002602001018190525080806104b390613296565b915050610459565b506000855167ffffffffffffffff8111156104d9576104d8611b46565b5b60405190808252806020026020018201604052801561051257816020015b6104ff611707565b8152602001906001900390816104f75790505b5090506000865167ffffffffffffffff81111561053257610531611b46565b5b60405190808252806020026020018201604052801561056b57816020015b6105586117b1565b8152602001906001900390816105505790505b50905060005b87518110156106105761059d8882815181106105905761058f613238565b5b602002602001015161073f565b8382815181106105b0576105af613238565b5b60200260200101819052506105df8882815181106105d1576105d0613238565b5b602002602001015188610e87565b8282815181106105f2576105f1613238565b5b6020026020010181905250808061060890613296565b915050610571565b508185606001516000018190525080856060015160200181905250505050509392505050565b60608273ffffffffffffffffffffffffffffffffffffffff166391eece28837fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6000806040518763ffffffff1660e01b81526004016106bc9695949392919061331a565b600060405180830381600087803b1580156106d657600080fd5b505af19250505080156106e7575060015b610726573d8060008114610717576040519150601f19603f3d011682016040523d82523d6000602084013e61071c565b606091505b5080915050610739565b6040518060200160405280600081525090505b92915050565b610747611707565b81816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508173ffffffffffffffffffffffffffffffffffffffff1663ad4d4e296040518163ffffffff1660e01b81526004016101c060405180830381865afa1580156107cb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107ef9190613536565b81602001819052508173ffffffffffffffffffffffffffffffffffffffff16634549a6296040518163ffffffff1660e01b81526004016102a060405180830381865afa158015610843573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061086791906137bc565b81604001819052508173ffffffffffffffffffffffffffffffffffffffff1663a05f99066040518163ffffffff1660e01b815260040161012060405180830381865afa1580156108bb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108df9190613931565b81606001819052508173ffffffffffffffffffffffffffffffffffffffff166309218e916040518163ffffffff1660e01b815260040161010060405180830381865afa158015610933573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109579190613a29565b8160a00181905250600181606001516020015182606001516000015161097d9190613a57565b6109879190613a8b565b67ffffffffffffffff8111156109a05761099f611b46565b5b6040519080825280602002602001820160405280156109d957816020015b6109c6611834565b8152602001906001900390816109be5790505b508160e001819052508060e001515167ffffffffffffffff811115610a0157610a00611b46565b5b604051908082528060200260200182016040528015610a3a57816020015b610a27611879565b815260200190600190039081610a1f5790505b508161010001819052508173ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa158015610a8f573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ab39190613afd565b816080019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505060005b8160e0015151811015610c7c578273ffffffffffffffffffffffffffffffffffffffff1663a1d0a11382846060015160200151610b2a9190613a8b565b6040518263ffffffff1660e01b8152600401610b469190613b39565b61010060405180830381865afa158015610b64573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b889190613a29565b8260e001518281518110610b9f57610b9e613238565b5b60200260200101819052508273ffffffffffffffffffffffffffffffffffffffff166387aee00e8360e001518381518110610bdd57610bdc613238565b5b6020026020010151600001516040518263ffffffff1660e01b8152600401610c059190613b39565b60e060405180830381865afa158015610c22573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c469190613c80565b8261010001518281518110610c5e57610c5d613238565b5b60200260200101819052508080610c7490613296565b915050610aed565b508060e0015160018260e0015151610c949190613a57565b81518110610ca557610ca4613238565b5b60200260200101518160c001819052508173ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa158015610d00573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d249190613afd565b73ffffffffffffffffffffffffffffffffffffffff166352bfe7896040518163ffffffff1660e01b8152600401606060405180830381865afa158015610d6e573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d929190613d11565b8161012001819052508173ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa158015610de6573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e0a9190613afd565b73ffffffffffffffffffffffffffffffffffffffff16639fa6a6e36040518163ffffffff1660e01b8152600401602060405180830381865afa158015610e54573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e789190613d3e565b81610140018181525050919050565b610e8f6117b1565b82816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505081816020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508273ffffffffffffffffffffffffffffffffffffffff16635b4b9695836040518263ffffffff1660e01b8152600401610f389190613d6b565b60a060405180830381865afa158015610f55573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f799190613e12565b81604001819052508273ffffffffffffffffffffffffffffffffffffffff166355f57510836040518263ffffffff1660e01b8152600401610fba9190613d6b565b61010060405180830381865afa158015610fd8573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ffc9190613a29565b816060018190525060018160400151602001518260400151600001516110229190613a57565b61102c9190613a8b565b67ffffffffffffffff81111561104557611044611b46565b5b60405190808252806020026020018201604052801561107e57816020015b61106b611834565b8152602001906001900390816110635790505b508160a001819052508060a001515167ffffffffffffffff8111156110a6576110a5611b46565b5b6040519080825280602002602001820160405280156110df57816020015b6110cc611879565b8152602001906001900390816110c45790505b508160c001819052508060a001515167ffffffffffffffff81111561110757611106611b46565b5b6040519080825280602002602001820160405280156111355781602001602082028036833780820191505090505b508160e0018190525060008373ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa15801561118b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906111af9190613afd565b905060008473ffffffffffffffffffffffffffffffffffffffff166395fcd8366040518163ffffffff1660e01b8152600401602060405180830381865afa1580156111fe573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112229190613e7d565b905060005b8360a0015151811015611557578573ffffffffffffffffffffffffffffffffffffffff1663ce813aed86838760400151602001516112659190613a8b565b6040518363ffffffff1660e01b8152600401611282929190613eaa565b61010060405180830381865afa1580156112a0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112c49190613a29565b8460a0015182815181106112db576112da613238565b5b60200260200101819052508573ffffffffffffffffffffffffffffffffffffffff166387aee00e8560a00151838151811061131957611318613238565b5b6020026020010151600001516040518263ffffffff1660e01b81526004016113419190613b39565b60e060405180830381865afa15801561135e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906113829190613c80565b8460c00151828151811061139957611398613238565b5b602002602001018190525060008373ffffffffffffffffffffffffffffffffffffffff1663e0886f908660a0015184815181106113d9576113d8613238565b5b6020026020010151600001516040518263ffffffff1660e01b81526004016114019190613b39565b606060405180830381865afa15801561141e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906114429190613d11565b602001519050600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff16036114a557808560e00151838151811061149457611493613238565b5b602002602001018181525050611543565b8273ffffffffffffffffffffffffffffffffffffffff1663d7c7a935826040518263ffffffff1660e01b81526004016114de9190613ed3565b602060405180830381865afa1580156114fb573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061151f9190613eee565b8560e00151838151811061153657611535613238565b5b6020026020010181815250505b50808061154f90613296565b915050611227565b508260a0015160018460a001515161156f9190613a57565b815181106115805761157f613238565b5b60200260200101518360800181905250505092915050565b60608573ffffffffffffffffffffffffffffffffffffffff1663b1d50a48868686866040518563ffffffff1660e01b81526004016115d893929190613f1b565b6000604051808303818588803b1580156115f157600080fd5b505af193505050508015611603575060015b6116b75761160f613f66565b806308c379a0036116375750611623613f88565b8061162e575061167c565b809150506116ca565b634e487b710361167c57611649614018565b90611654575061167c565b80604051602001611665919061405a565b6040516020818303038152906040529150506116ca565b3d80600081146116a8576040519150601f19603f3d011682016040523d82523d6000602084013e6116ad565b606091505b50809150506116ca565b6040518060200160405280600081525090505b95945050505050565b604051806080016040528060608152602001606081526020016116f46118dc565b81526020016117016118dc565b81525090565b604051806101600160405280600073ffffffffffffffffffffffffffffffffffffffff1681526020016117386118f6565b815260200161174561196b565b81526020016117526119fd565b8152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200161177c611834565b8152602001611789611834565b815260200160608152602001606081526020016117a4611a48565b8152602001600081525090565b604051806101000160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016117ff611a6b565b815260200161180c611834565b8152602001611819611834565b81526020016060815260200160608152602001606081525090565b60405180610100016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040518060e00160405280600015158152602001611895611a9a565b81526020016118a2611a9a565b81526020016118af611a9a565b81526020016118bc611aad565b81526020016118c9611aad565b81526020016118d6611aad565b81525090565b604051806040016040528060608152602001606081525090565b604051806101c0016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000151581526020016000151581526020016000151581525090565b60405180610220016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016119cc611ac0565b81526020016119d9611ae8565b81526020016000815260200160008152602001600081526020016000151581525090565b604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001611a3b611b02565b8152602001600081525090565b604051806060016040528060008152602001600081526020016000151581525090565b6040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6040518060200160405280600081525090565b6040518060200160405280600081525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b604051806040016040528060008152602001600081525090565b604051806040016040528060008152602001600081525090565b6000604051905090565b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b611b7e82611b35565b810181811067ffffffffffffffff82111715611b9d57611b9c611b46565b5b80604052505050565b6000611bb0611b1c565b9050611bbc8282611b75565b919050565b600067ffffffffffffffff821115611bdc57611bdb611b46565b5b602082029050602081019050919050565b600080fd5b600080fd5b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000611c2782611bfc565b9050919050565b6000611c3982611c1c565b9050919050565b611c4981611c2e565b8114611c5457600080fd5b50565b600081359050611c6681611c40565b92915050565b6000819050919050565b611c7f81611c6c565b8114611c8a57600080fd5b50565b600081359050611c9c81611c76565b92915050565b600080fd5b600067ffffffffffffffff821115611cc257611cc1611b46565b5b611ccb82611b35565b9050602081019050919050565b82818337600083830152505050565b6000611cfa611cf584611ca7565b611ba6565b905082815260208101848484011115611d1657611d15611ca2565b5b611d21848285611cd8565b509392505050565b600082601f830112611d3e57611d3d611b30565b5b8135611d4e848260208601611ce7565b91505092915050565b600060a08284031215611d6d57611d6c611bf2565b5b611d7760a0611ba6565b90506000611d8784828501611c57565b6000830152506020611d9b84828501611c8d565b6020830152506040611daf84828501611c8d565b6040830152506060611dc384828501611c8d565b606083015250608082013567ffffffffffffffff811115611de757611de6611bf7565b5b611df384828501611d29565b60808301525092915050565b6000611e12611e0d84611bc1565b611ba6565b90508083825260208201905060208402830185811115611e3557611e34611bed565b5b835b81811015611e7c57803567ffffffffffffffff811115611e5a57611e59611b30565b5b808601611e678982611d57565b85526020850194505050602081019050611e37565b5050509392505050565b600082601f830112611e9b57611e9a611b30565b5b8135611eab848260208601611dff565b91505092915050565b600067ffffffffffffffff821115611ecf57611ece611b46565b5b602082029050602081019050919050565b6000611eeb82611c1c565b9050919050565b611efb81611ee0565b8114611f0657600080fd5b50565b600081359050611f1881611ef2565b92915050565b6000611f31611f2c84611eb4565b611ba6565b90508083825260208201905060208402830185811115611f5457611f53611bed565b5b835b81811015611f7d5780611f698882611f09565b845260208401935050602081019050611f56565b5050509392505050565b600082601f830112611f9c57611f9b611b30565b5b8135611fac848260208601611f1e565b91505092915050565b611fbe81611c1c565b8114611fc957600080fd5b50565b600081359050611fdb81611fb5565b92915050565b600080600060608486031215611ffa57611ff9611b26565b5b600084013567ffffffffffffffff81111561201857612017611b2b565b5b61202486828701611e86565b935050602084013567ffffffffffffffff81111561204557612044611b2b565b5b61205186828701611f87565b925050604061206286828701611fcc565b9150509250925092565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600081519050919050565b600082825260208201905092915050565b60005b838110156120d25780820151818401526020810190506120b7565b60008484015250505050565b60006120e982612098565b6120f381856120a3565b93506121038185602086016120b4565b61210c81611b35565b840191505092915050565b600061212383836120de565b905092915050565b6000602082019050919050565b60006121438261206c565b61214d8185612077565b93508360208202850161215f85612088565b8060005b8581101561219b578484038952815161217c8582612117565b94506121878361212b565b925060208a01995050600181019050612163565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000819050919050565b60006121fe6121f96121f484611bfc565b6121d9565b611bfc565b9050919050565b6000612210826121e3565b9050919050565b600061222282612205565b9050919050565b61223281612217565b82525050565b600061225361224e61224984611c6c565b6121d9565b611c6c565b9050919050565b61226381612238565b82525050565b61227281611c6c565b82525050565b60008115159050919050565b61228d81612278565b82525050565b6101c0820160008201516122aa600085018261225a565b5060208201516122bd602085018261225a565b5060408201516122d0604085018261225a565b5060608201516122e3606085018261225a565b5060808201516122f6608085018261225a565b5060a082015161230960a0850182612269565b5060c082015161231c60c0850182612269565b5060e082015161232f60e085018261225a565b5061010082015161234461010085018261225a565b5061012082015161235961012085018261225a565b5061014082015161236e61014085018261225a565b50610160820151612383610160850182612284565b50610180820151612398610180850182612284565b506101a08201516123ad6101a0850182612284565b50505050565b6080820160008201516123c9600085018261225a565b5060208201516123dc602085018261225a565b5060408201516123ef604085018261225a565b506060820151612402606085018261225a565b50505050565b60408201600082015161241e600085018261225a565b506020820151612431602085018261225a565b50505050565b6102a08201600082015161244e600085018261225a565b506020820151612461602085018261225a565b506040820151612474604085018261225a565b506060820151612487606085018261225a565b50608082015161249a608085018261225a565b5060a08201516124ad60a085018261225a565b5060c08201516124c060c085018261225a565b5060e08201516124d360e085018261225a565b506101008201516124e861010085018261225a565b506101208201516124fd61012085018261225a565b5061014082015161251261014085018261225a565b506101608201516125276101608501826123b3565b5061018082015161253c6101e0850182612408565b506101a082015161255161022085018261225a565b506101c082015161256661024085018261225a565b506101e082015161257b610260850182612269565b50610200820151612590610280850182612284565b50505050565b6000819050919050565b60006125bb6125b66125b184612596565b6121d9565b612596565b9050919050565b6125cb816125a0565b82525050565b6040820160008201516125e760008501826125c2565b5060208201516125fa60208501826125c2565b50505050565b610120820160008201516126176000850182612269565b50602082015161262a6020850182612269565b50604082015161263d604085018261225a565b506060820151612650606085018261225a565b506080820151612663608085018261225a565b5060a082015161267660a085018261225a565b5060c082015161268960c08501826125d1565b5060e082015161269d6101008501826125c2565b50505050565b6126ac81611c1c565b82525050565b610100820160008201516126c96000850182612269565b5060208201516126dc602085018261225a565b5060408201516126ef604085018261225a565b506060820151612702606085018261225a565b506080820151612715608085018261225a565b5060a082015161272860a085018261225a565b5060c082015161273b60c08501826125c2565b5060e082015161274e60e08501826125c2565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600061278c83836126b2565b6101008301905092915050565b6000602082019050919050565b60006127b182612754565b6127bb818561275f565b93506127c683612770565b8060005b838110156127f75781516127de8882612780565b97506127e983612799565b9250506001810190506127ca565b5085935050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b60208201600082015161284660008501826125c2565b50505050565b602082016000820151612862600085018261225a565b50505050565b60e08201600082015161287e6000850182612284565b5060208201516128916020850182612830565b5060408201516128a46040850182612830565b5060608201516128b76060850182612830565b5060808201516128ca608085018261284c565b5060a08201516128dd60a085018261284c565b5060c08201516128f060c085018261284c565b50505050565b60006129028383612868565b60e08301905092915050565b6000602082019050919050565b600061292682612804565b612930818561280f565b935061293b83612820565b8060005b8381101561296c57815161295388826128f6565b975061295e8361290e565b92505060018101905061293f565b5085935050505092915050565b60608201600082015161298f6000850182612269565b5060208201516129a260208501826125c2565b5060408201516129b56040850182612284565b50505050565b6000610880830160008301516129d46000860182612229565b5060208301516129e76020860182612293565b5060408301516129fb6101e0860182612437565b506060830151612a0f610480860182612600565b506080830151612a236105a08601826126a3565b5060a0830151612a376105c08601826126b2565b5060c0830151612a4b6106c08601826126b2565b5060e08301518482036107c0860152612a6482826127a6565b9150506101008301518482036107e0860152612a80828261291b565b915050610120830151612a97610800860182612979565b50610140830151612aac610860860182612269565b508091505092915050565b6000612ac383836129bb565b905092915050565b6000602082019050919050565b6000612ae3826121ad565b612aed81856121b8565b935083602082028501612aff856121c9565b8060005b85811015612b3b5784840389528151612b1c8582612ab7565b9450612b2783612acb565b925060208a01995050600181019050612b03565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b60a082016000820151612b8f6000850182612269565b506020820151612ba26020850182612269565b506040820151612bb560408501826125c2565b506060820151612bc8606085018261225a565b506080820151612bdb6080850182612269565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000612c1983836125c2565b60208301905092915050565b6000602082019050919050565b6000612c3d82612be1565b612c478185612bec565b9350612c5283612bfd565b8060005b83811015612c83578151612c6a8882612c0d565b9750612c7583612c25565b925050600181019050612c56565b5085935050505092915050565b600061034083016000830151612ca96000860182612229565b506020830151612cbc60208601826126a3565b506040830151612ccf6040860182612b79565b506060830151612ce260e08601826126b2565b506080830151612cf66101e08601826126b2565b5060a08301518482036102e0860152612d0f82826127a6565b91505060c0830151848203610300860152612d2a828261291b565b91505060e0830151848203610320860152612d458282612c32565b9150508091505092915050565b6000612d5e8383612c90565b905092915050565b6000602082019050919050565b6000612d7e82612b4d565b612d888185612b58565b935083602082028501612d9a85612b69565b8060005b85811015612dd65784840389528151612db78582612d52565b9450612dc283612d66565b925060208a01995050600181019050612d9e565b50829750879550505050505092915050565b60006040830160008301518482036000860152612e058282612ad8565b91505060208301518482036020860152612e1f8282612d73565b9150508091505092915050565b60006080830160008301518482036000860152612e498282612138565b91505060208301518482036020860152612e638282612138565b91505060408301518482036040860152612e7d8282612de8565b91505060608301518482036060860152612e978282612de8565b9150508091505092915050565b60006020820190508181036000830152612ebe8184612e2c565b905092915050565b60008060408385031215612edd57612edc611b26565b5b6000612eeb85828601611f09565b9250506020612efc85828601611fcc565b9150509250929050565b600082825260208201905092915050565b6000612f2282612098565b612f2c8185612f06565b9350612f3c8185602086016120b4565b612f4581611b35565b840191505092915050565b60006020820190508181036000830152612f6a8184612f17565b905092915050565b600060208284031215612f8857612f87611b26565b5b6000612f9684828501611f09565b91505092915050565b600061088083016000830151612fb86000860182612229565b506020830151612fcb6020860182612293565b506040830151612fdf6101e0860182612437565b506060830151612ff3610480860182612600565b5060808301516130076105a08601826126a3565b5060a083015161301b6105c08601826126b2565b5060c083015161302f6106c08601826126b2565b5060e08301518482036107c086015261304882826127a6565b9150506101008301518482036107e0860152613064828261291b565b91505061012083015161307b610800860182612979565b50610140830151613090610860860182612269565b508091505092915050565b600060208201905081810360008301526130b58184612f9f565b905092915050565b6000610340830160008301516130d66000860182612229565b5060208301516130e960208601826126a3565b5060408301516130fc6040860182612b79565b50606083015161310f60e08601826126b2565b5060808301516131236101e08601826126b2565b5060a08301518482036102e086015261313c82826127a6565b91505060c0830151848203610300860152613157828261291b565b91505060e08301518482036103208601526131728282612c32565b9150508091505092915050565b6000602082019050818103600083015261319981846130bd565b905092915050565b600080600080600060a086880312156131bd576131bc611b26565b5b60006131cb88828901611c57565b95505060206131dc88828901611c8d565b94505060406131ed88828901611c8d565b93505060606131fe88828901611c8d565b925050608086013567ffffffffffffffff81111561321f5761321e611b2b565b5b61322b88828901611d29565b9150509295509295909350565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006132a182611c6c565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82036132d3576132d2613267565b5b600182019050919050565b6132e781611c1c565b82525050565b6132f681612238565b82525050565b613305816125a0565b82525050565b61331481612278565b82525050565b600060c08201905061332f60008301896132de565b61333c60208301886132ed565b61334960408301876132ed565b61335660608301866132ed565b61336360808301856132fc565b61337060a083018461330b565b979650505050505050565b61338481611c6c565b811461338f57600080fd5b50565b6000815190506133a18161337b565b92915050565b6000815190506133b681611c76565b92915050565b6133c581612278565b81146133d057600080fd5b50565b6000815190506133e2816133bc565b92915050565b60006101c082840312156133ff576133fe611bf2565b5b61340a6101c0611ba6565b9050600061341a84828501613392565b600083015250602061342e84828501613392565b602083015250604061344284828501613392565b604083015250606061345684828501613392565b606083015250608061346a84828501613392565b60808301525060a061347e848285016133a7565b60a08301525060c0613492848285016133a7565b60c08301525060e06134a684828501613392565b60e0830152506101006134bb84828501613392565b610100830152506101206134d184828501613392565b610120830152506101406134e784828501613392565b610140830152506101606134fd848285016133d3565b61016083015250610180613513848285016133d3565b610180830152506101a0613529848285016133d3565b6101a08301525092915050565b60006101c0828403121561354d5761354c611b26565b5b600061355b848285016133e8565b91505092915050565b60006080828403121561357a57613579611bf2565b5b6135846080611ba6565b9050600061359484828501613392565b60008301525060206135a884828501613392565b60208301525060406135bc84828501613392565b60408301525060606135d084828501613392565b60608301525092915050565b6000604082840312156135f2576135f1611bf2565b5b6135fc6040611ba6565b9050600061360c84828501613392565b600083015250602061362084828501613392565b60208301525092915050565b60006102a0828403121561364357613642611bf2565b5b61364e610220611ba6565b9050600061365e84828501613392565b600083015250602061367284828501613392565b602083015250604061368684828501613392565b604083015250606061369a84828501613392565b60608301525060806136ae84828501613392565b60808301525060a06136c284828501613392565b60a08301525060c06136d684828501613392565b60c08301525060e06136ea84828501613392565b60e0830152506101006136ff84828501613392565b6101008301525061012061371584828501613392565b6101208301525061014061372b84828501613392565b6101408301525061016061374184828501613564565b610160830152506101e0613757848285016135dc565b6101808301525061022061376d84828501613392565b6101a08301525061024061378384828501613392565b6101c083015250610260613799848285016133a7565b6101e0830152506102806137af848285016133d3565b6102008301525092915050565b60006102a082840312156137d3576137d2611b26565b5b60006137e18482850161362c565b91505092915050565b6137f381612596565b81146137fe57600080fd5b50565b600081519050613810816137ea565b92915050565b60006040828403121561382c5761382b611bf2565b5b6138366040611ba6565b9050600061384684828501613801565b600083015250602061385a84828501613801565b60208301525092915050565b6000610120828403121561387d5761387c611bf2565b5b613888610100611ba6565b90506000613898848285016133a7565b60008301525060206138ac848285016133a7565b60208301525060406138c084828501613392565b60408301525060606138d484828501613392565b60608301525060806138e884828501613392565b60808301525060a06138fc84828501613392565b60a08301525060c061391084828501613816565b60c08301525061010061392584828501613801565b60e08301525092915050565b6000610120828403121561394857613947611b26565b5b600061395684828501613866565b91505092915050565b6000610100828403121561397657613975611bf2565b5b613981610100611ba6565b90506000613991848285016133a7565b60008301525060206139a584828501613392565b60208301525060406139b984828501613392565b60408301525060606139cd84828501613392565b60608301525060806139e184828501613392565b60808301525060a06139f584828501613392565b60a08301525060c0613a0984828501613801565b60c08301525060e0613a1d84828501613801565b60e08301525092915050565b60006101008284031215613a4057613a3f611b26565b5b6000613a4e8482850161395f565b91505092915050565b6000613a6282611c6c565b9150613a6d83611c6c565b9250828203905081811115613a8557613a84613267565b5b92915050565b6000613a9682611c6c565b9150613aa183611c6c565b9250828201905080821115613ab957613ab8613267565b5b92915050565b6000613aca82611c1c565b9050919050565b613ada81613abf565b8114613ae557600080fd5b50565b600081519050613af781613ad1565b92915050565b600060208284031215613b1357613b12611b26565b5b6000613b2184828501613ae8565b91505092915050565b613b3381611c6c565b82525050565b6000602082019050613b4e6000830184613b2a565b92915050565b600060208284031215613b6a57613b69611bf2565b5b613b746020611ba6565b90506000613b8484828501613801565b60008301525092915050565b600060208284031215613ba657613ba5611bf2565b5b613bb06020611ba6565b90506000613bc084828501613392565b60008301525092915050565b600060e08284031215613be257613be1611bf2565b5b613bec60e0611ba6565b90506000613bfc848285016133d3565b6000830152506020613c1084828501613b54565b6020830152506040613c2484828501613b54565b6040830152506060613c3884828501613b54565b6060830152506080613c4c84828501613b90565b60808301525060a0613c6084828501613b90565b60a08301525060c0613c7484828501613b90565b60c08301525092915050565b600060e08284031215613c9657613c95611b26565b5b6000613ca484828501613bcc565b91505092915050565b600060608284031215613cc357613cc2611bf2565b5b613ccd6060611ba6565b90506000613cdd848285016133a7565b6000830152506020613cf184828501613801565b6020830152506040613d05848285016133d3565b60408301525092915050565b600060608284031215613d2757613d26611b26565b5b6000613d3584828501613cad565b91505092915050565b600060208284031215613d5457613d53611b26565b5b6000613d62848285016133a7565b91505092915050565b6000602082019050613d8060008301846132de565b92915050565b600060a08284031215613d9c57613d9b611bf2565b5b613da660a0611ba6565b90506000613db6848285016133a7565b6000830152506020613dca848285016133a7565b6020830152506040613dde84828501613801565b6040830152506060613df284828501613392565b6060830152506080613e06848285016133a7565b60808301525092915050565b600060a08284031215613e2857613e27611b26565b5b6000613e3684828501613d86565b91505092915050565b6000613e4a82611c1c565b9050919050565b613e5a81613e3f565b8114613e6557600080fd5b50565b600081519050613e7781613e51565b92915050565b600060208284031215613e9357613e92611b26565b5b6000613ea184828501613e68565b91505092915050565b6000604082019050613ebf60008301856132de565b613ecc6020830184613b2a565b9392505050565b6000602082019050613ee860008301846132fc565b92915050565b600060208284031215613f0457613f03611b26565b5b6000613f1284828501613801565b91505092915050565b6000606082019050613f306000830186613b2a565b613f3d6020830185613b2a565b8181036040830152613f4f8184612f17565b9050949350505050565b60008160e01c9050919050565b600060033d1115613f855760046000803e613f82600051613f59565b90505b90565b600060443d1061401557613f9a611b1c565b60043d036004823e80513d602482011167ffffffffffffffff82111715613fc2575050614015565b808201805167ffffffffffffffff811115613fe05750505050614015565b80602083010160043d038501811115613ffd575050505050614015565b61400c82602001850186611b75565b82955050505050505b90565b60008060233d1115614035576020600460003e6001915060005190505b9091565b6000819050919050565b61405461404f82611c6c565b614039565b82525050565b60006140668284614043565b6020820191508190509291505056fea26469706673582212204170c7dcaee637da9bd2e91f36ce6f2becc74ac76ab3644a517dc1b16a04d54964736f6c63430008130033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806323e46fea1461005c578063558484641461008c5780636eb79f6a146100bc5780637987bd7f146100ec5780637e8306ad1461011c575b600080fd5b61007660048036038101906100719190611fe1565b61014c565b6040516100839190612ea4565b60405180910390f35b6100a660048036038101906100a19190612ec6565b610636565b6040516100b39190612f50565b60405180910390f35b6100d660048036038101906100d19190612f72565b61073f565b6040516100e3919061309b565b60405180910390f35b61010660048036038101906101019190612ec6565b610e87565b604051610113919061317f565b60405180910390f35b610136600480360381019061013191906131a1565b611598565b6040516101439190612f50565b60405180910390f35b6101546116d3565b6000835167ffffffffffffffff81111561017157610170611b46565b5b6040519080825280602002602001820160405280156101aa57816020015b610197611707565b81526020019060019003908161018f5790505b5090506000845167ffffffffffffffff8111156101ca576101c9611b46565b5b60405190808252806020026020018201604052801561020357816020015b6101f06117b1565b8152602001906001900390816101e85790505b50905060005b85518110156102a85761023586828151811061022857610227613238565b5b602002602001015161073f565b83828151811061024857610247613238565b5b602002602001018190525061027786828151811061026957610268613238565b5b602002602001015186610e87565b82828151811061028a57610289613238565b5b602002602001018190525080806102a090613296565b915050610209565b508183604001516000018190525080836040015160200181905250855167ffffffffffffffff8111156102de576102dd611b46565b5b60405190808252806020026020018201604052801561031157816020015b60608152602001906001900390816102fc5790505b50836000018190525060005b86518110156103fe576103c987828151811061033c5761033b613238565b5b60200260200101516000015188838151811061035b5761035a613238565b5b60200260200101516020015189848151811061037a57610379613238565b5b6020026020010151604001518a858151811061039957610398613238565b5b6020026020010151606001518b86815181106103b8576103b7613238565b5b602002602001015160800151611598565b846000015182815181106103e0576103df613238565b5b602002602001018190525080806103f690613296565b91505061031d565b50845167ffffffffffffffff81111561041a57610419611b46565b5b60405190808252806020026020018201604052801561044d57816020015b60608152602001906001900390816104385790505b50836020018190525060005b85518110156104bb5761048686828151811061047857610477613238565b5b602002602001015186610636565b8460200151828151811061049d5761049c613238565b5b602002602001018190525080806104b390613296565b915050610459565b506000855167ffffffffffffffff8111156104d9576104d8611b46565b5b60405190808252806020026020018201604052801561051257816020015b6104ff611707565b8152602001906001900390816104f75790505b5090506000865167ffffffffffffffff81111561053257610531611b46565b5b60405190808252806020026020018201604052801561056b57816020015b6105586117b1565b8152602001906001900390816105505790505b50905060005b87518110156106105761059d8882815181106105905761058f613238565b5b602002602001015161073f565b8382815181106105b0576105af613238565b5b60200260200101819052506105df8882815181106105d1576105d0613238565b5b602002602001015188610e87565b8282815181106105f2576105f1613238565b5b6020026020010181905250808061060890613296565b915050610571565b508185606001516000018190525080856060015160200181905250505050509392505050565b60608273ffffffffffffffffffffffffffffffffffffffff166391eece28837fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6000806040518763ffffffff1660e01b81526004016106bc9695949392919061331a565b600060405180830381600087803b1580156106d657600080fd5b505af19250505080156106e7575060015b610726573d8060008114610717576040519150601f19603f3d011682016040523d82523d6000602084013e61071c565b606091505b5080915050610739565b6040518060200160405280600081525090505b92915050565b610747611707565b81816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508173ffffffffffffffffffffffffffffffffffffffff1663ad4d4e296040518163ffffffff1660e01b81526004016101c060405180830381865afa1580156107cb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107ef9190613536565b81602001819052508173ffffffffffffffffffffffffffffffffffffffff16634549a6296040518163ffffffff1660e01b81526004016102a060405180830381865afa158015610843573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061086791906137bc565b81604001819052508173ffffffffffffffffffffffffffffffffffffffff1663a05f99066040518163ffffffff1660e01b815260040161012060405180830381865afa1580156108bb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108df9190613931565b81606001819052508173ffffffffffffffffffffffffffffffffffffffff166309218e916040518163ffffffff1660e01b815260040161010060405180830381865afa158015610933573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109579190613a29565b8160a00181905250600181606001516020015182606001516000015161097d9190613a57565b6109879190613a8b565b67ffffffffffffffff8111156109a05761099f611b46565b5b6040519080825280602002602001820160405280156109d957816020015b6109c6611834565b8152602001906001900390816109be5790505b508160e001819052508060e001515167ffffffffffffffff811115610a0157610a00611b46565b5b604051908082528060200260200182016040528015610a3a57816020015b610a27611879565b815260200190600190039081610a1f5790505b508161010001819052508173ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa158015610a8f573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ab39190613afd565b816080019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505060005b8160e0015151811015610c7c578273ffffffffffffffffffffffffffffffffffffffff1663a1d0a11382846060015160200151610b2a9190613a8b565b6040518263ffffffff1660e01b8152600401610b469190613b39565b61010060405180830381865afa158015610b64573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b889190613a29565b8260e001518281518110610b9f57610b9e613238565b5b60200260200101819052508273ffffffffffffffffffffffffffffffffffffffff166387aee00e8360e001518381518110610bdd57610bdc613238565b5b6020026020010151600001516040518263ffffffff1660e01b8152600401610c059190613b39565b60e060405180830381865afa158015610c22573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610c469190613c80565b8261010001518281518110610c5e57610c5d613238565b5b60200260200101819052508080610c7490613296565b915050610aed565b508060e0015160018260e0015151610c949190613a57565b81518110610ca557610ca4613238565b5b60200260200101518160c001819052508173ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa158015610d00573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d249190613afd565b73ffffffffffffffffffffffffffffffffffffffff166352bfe7896040518163ffffffff1660e01b8152600401606060405180830381865afa158015610d6e573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610d929190613d11565b8161012001819052508173ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa158015610de6573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e0a9190613afd565b73ffffffffffffffffffffffffffffffffffffffff16639fa6a6e36040518163ffffffff1660e01b8152600401602060405180830381865afa158015610e54573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e789190613d3e565b81610140018181525050919050565b610e8f6117b1565b82816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505081816020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250508273ffffffffffffffffffffffffffffffffffffffff16635b4b9695836040518263ffffffff1660e01b8152600401610f389190613d6b565b60a060405180830381865afa158015610f55573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610f799190613e12565b81604001819052508273ffffffffffffffffffffffffffffffffffffffff166355f57510836040518263ffffffff1660e01b8152600401610fba9190613d6b565b61010060405180830381865afa158015610fd8573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ffc9190613a29565b816060018190525060018160400151602001518260400151600001516110229190613a57565b61102c9190613a8b565b67ffffffffffffffff81111561104557611044611b46565b5b60405190808252806020026020018201604052801561107e57816020015b61106b611834565b8152602001906001900390816110635790505b508160a001819052508060a001515167ffffffffffffffff8111156110a6576110a5611b46565b5b6040519080825280602002602001820160405280156110df57816020015b6110cc611879565b8152602001906001900390816110c45790505b508160c001819052508060a001515167ffffffffffffffff81111561110757611106611b46565b5b6040519080825280602002602001820160405280156111355781602001602082028036833780820191505090505b508160e0018190525060008373ffffffffffffffffffffffffffffffffffffffff16637dc0d1d06040518163ffffffff1660e01b8152600401602060405180830381865afa15801561118b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906111af9190613afd565b905060008473ffffffffffffffffffffffffffffffffffffffff166395fcd8366040518163ffffffff1660e01b8152600401602060405180830381865afa1580156111fe573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112229190613e7d565b905060005b8360a0015151811015611557578573ffffffffffffffffffffffffffffffffffffffff1663ce813aed86838760400151602001516112659190613a8b565b6040518363ffffffff1660e01b8152600401611282929190613eaa565b61010060405180830381865afa1580156112a0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906112c49190613a29565b8460a0015182815181106112db576112da613238565b5b60200260200101819052508573ffffffffffffffffffffffffffffffffffffffff166387aee00e8560a00151838151811061131957611318613238565b5b6020026020010151600001516040518263ffffffff1660e01b81526004016113419190613b39565b60e060405180830381865afa15801561135e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906113829190613c80565b8460c00151828151811061139957611398613238565b5b602002602001018190525060008373ffffffffffffffffffffffffffffffffffffffff1663e0886f908660a0015184815181106113d9576113d8613238565b5b6020026020010151600001516040518263ffffffff1660e01b81526004016114019190613b39565b606060405180830381865afa15801561141e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906114429190613d11565b602001519050600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff16036114a557808560e00151838151811061149457611493613238565b5b602002602001018181525050611543565b8273ffffffffffffffffffffffffffffffffffffffff1663d7c7a935826040518263ffffffff1660e01b81526004016114de9190613ed3565b602060405180830381865afa1580156114fb573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061151f9190613eee565b8560e00151838151811061153657611535613238565b5b6020026020010181815250505b50808061154f90613296565b915050611227565b508260a0015160018460a001515161156f9190613a57565b815181106115805761157f613238565b5b60200260200101518360800181905250505092915050565b60608573ffffffffffffffffffffffffffffffffffffffff1663b1d50a48868686866040518563ffffffff1660e01b81526004016115d893929190613f1b565b6000604051808303818588803b1580156115f157600080fd5b505af193505050508015611603575060015b6116b75761160f613f66565b806308c379a0036116375750611623613f88565b8061162e575061167c565b809150506116ca565b634e487b710361167c57611649614018565b90611654575061167c565b80604051602001611665919061405a565b6040516020818303038152906040529150506116ca565b3d80600081146116a8576040519150601f19603f3d011682016040523d82523d6000602084013e6116ad565b606091505b50809150506116ca565b6040518060200160405280600081525090505b95945050505050565b604051806080016040528060608152602001606081526020016116f46118dc565b81526020016117016118dc565b81525090565b604051806101600160405280600073ffffffffffffffffffffffffffffffffffffffff1681526020016117386118f6565b815260200161174561196b565b81526020016117526119fd565b8152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200161177c611834565b8152602001611789611834565b815260200160608152602001606081526020016117a4611a48565b8152602001600081525090565b604051806101000160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016117ff611a6b565b815260200161180c611834565b8152602001611819611834565b81526020016060815260200160608152602001606081525090565b60405180610100016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b6040518060e00160405280600015158152602001611895611a9a565b81526020016118a2611a9a565b81526020016118af611a9a565b81526020016118bc611aad565b81526020016118c9611aad565b81526020016118d6611aad565b81525090565b604051806040016040528060608152602001606081525090565b604051806101c0016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000151581526020016000151581526020016000151581525090565b60405180610220016040528060008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016119cc611ac0565b81526020016119d9611ae8565b81526020016000815260200160008152602001600081526020016000151581525090565b604051806101000160405280600081526020016000815260200160008152602001600081526020016000815260200160008152602001611a3b611b02565b8152602001600081525090565b604051806060016040528060008152602001600081526020016000151581525090565b6040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6040518060200160405280600081525090565b6040518060200160405280600081525090565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b604051806040016040528060008152602001600081525090565b604051806040016040528060008152602001600081525090565b6000604051905090565b600080fd5b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b611b7e82611b35565b810181811067ffffffffffffffff82111715611b9d57611b9c611b46565b5b80604052505050565b6000611bb0611b1c565b9050611bbc8282611b75565b919050565b600067ffffffffffffffff821115611bdc57611bdb611b46565b5b602082029050602081019050919050565b600080fd5b600080fd5b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000611c2782611bfc565b9050919050565b6000611c3982611c1c565b9050919050565b611c4981611c2e565b8114611c5457600080fd5b50565b600081359050611c6681611c40565b92915050565b6000819050919050565b611c7f81611c6c565b8114611c8a57600080fd5b50565b600081359050611c9c81611c76565b92915050565b600080fd5b600067ffffffffffffffff821115611cc257611cc1611b46565b5b611ccb82611b35565b9050602081019050919050565b82818337600083830152505050565b6000611cfa611cf584611ca7565b611ba6565b905082815260208101848484011115611d1657611d15611ca2565b5b611d21848285611cd8565b509392505050565b600082601f830112611d3e57611d3d611b30565b5b8135611d4e848260208601611ce7565b91505092915050565b600060a08284031215611d6d57611d6c611bf2565b5b611d7760a0611ba6565b90506000611d8784828501611c57565b6000830152506020611d9b84828501611c8d565b6020830152506040611daf84828501611c8d565b6040830152506060611dc384828501611c8d565b606083015250608082013567ffffffffffffffff811115611de757611de6611bf7565b5b611df384828501611d29565b60808301525092915050565b6000611e12611e0d84611bc1565b611ba6565b90508083825260208201905060208402830185811115611e3557611e34611bed565b5b835b81811015611e7c57803567ffffffffffffffff811115611e5a57611e59611b30565b5b808601611e678982611d57565b85526020850194505050602081019050611e37565b5050509392505050565b600082601f830112611e9b57611e9a611b30565b5b8135611eab848260208601611dff565b91505092915050565b600067ffffffffffffffff821115611ecf57611ece611b46565b5b602082029050602081019050919050565b6000611eeb82611c1c565b9050919050565b611efb81611ee0565b8114611f0657600080fd5b50565b600081359050611f1881611ef2565b92915050565b6000611f31611f2c84611eb4565b611ba6565b90508083825260208201905060208402830185811115611f5457611f53611bed565b5b835b81811015611f7d5780611f698882611f09565b845260208401935050602081019050611f56565b5050509392505050565b600082601f830112611f9c57611f9b611b30565b5b8135611fac848260208601611f1e565b91505092915050565b611fbe81611c1c565b8114611fc957600080fd5b50565b600081359050611fdb81611fb5565b92915050565b600080600060608486031215611ffa57611ff9611b26565b5b600084013567ffffffffffffffff81111561201857612017611b2b565b5b61202486828701611e86565b935050602084013567ffffffffffffffff81111561204557612044611b2b565b5b61205186828701611f87565b925050604061206286828701611fcc565b9150509250925092565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600081519050919050565b600082825260208201905092915050565b60005b838110156120d25780820151818401526020810190506120b7565b60008484015250505050565b60006120e982612098565b6120f381856120a3565b93506121038185602086016120b4565b61210c81611b35565b840191505092915050565b600061212383836120de565b905092915050565b6000602082019050919050565b60006121438261206c565b61214d8185612077565b93508360208202850161215f85612088565b8060005b8581101561219b578484038952815161217c8582612117565b94506121878361212b565b925060208a01995050600181019050612163565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000819050919050565b60006121fe6121f96121f484611bfc565b6121d9565b611bfc565b9050919050565b6000612210826121e3565b9050919050565b600061222282612205565b9050919050565b61223281612217565b82525050565b600061225361224e61224984611c6c565b6121d9565b611c6c565b9050919050565b61226381612238565b82525050565b61227281611c6c565b82525050565b60008115159050919050565b61228d81612278565b82525050565b6101c0820160008201516122aa600085018261225a565b5060208201516122bd602085018261225a565b5060408201516122d0604085018261225a565b5060608201516122e3606085018261225a565b5060808201516122f6608085018261225a565b5060a082015161230960a0850182612269565b5060c082015161231c60c0850182612269565b5060e082015161232f60e085018261225a565b5061010082015161234461010085018261225a565b5061012082015161235961012085018261225a565b5061014082015161236e61014085018261225a565b50610160820151612383610160850182612284565b50610180820151612398610180850182612284565b506101a08201516123ad6101a0850182612284565b50505050565b6080820160008201516123c9600085018261225a565b5060208201516123dc602085018261225a565b5060408201516123ef604085018261225a565b506060820151612402606085018261225a565b50505050565b60408201600082015161241e600085018261225a565b506020820151612431602085018261225a565b50505050565b6102a08201600082015161244e600085018261225a565b506020820151612461602085018261225a565b506040820151612474604085018261225a565b506060820151612487606085018261225a565b50608082015161249a608085018261225a565b5060a08201516124ad60a085018261225a565b5060c08201516124c060c085018261225a565b5060e08201516124d360e085018261225a565b506101008201516124e861010085018261225a565b506101208201516124fd61012085018261225a565b5061014082015161251261014085018261225a565b506101608201516125276101608501826123b3565b5061018082015161253c6101e0850182612408565b506101a082015161255161022085018261225a565b506101c082015161256661024085018261225a565b506101e082015161257b610260850182612269565b50610200820151612590610280850182612284565b50505050565b6000819050919050565b60006125bb6125b66125b184612596565b6121d9565b612596565b9050919050565b6125cb816125a0565b82525050565b6040820160008201516125e760008501826125c2565b5060208201516125fa60208501826125c2565b50505050565b610120820160008201516126176000850182612269565b50602082015161262a6020850182612269565b50604082015161263d604085018261225a565b506060820151612650606085018261225a565b506080820151612663608085018261225a565b5060a082015161267660a085018261225a565b5060c082015161268960c08501826125d1565b5060e082015161269d6101008501826125c2565b50505050565b6126ac81611c1c565b82525050565b610100820160008201516126c96000850182612269565b5060208201516126dc602085018261225a565b5060408201516126ef604085018261225a565b506060820151612702606085018261225a565b506080820151612715608085018261225a565b5060a082015161272860a085018261225a565b5060c082015161273b60c08501826125c2565b5060e082015161274e60e08501826125c2565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b600061278c83836126b2565b6101008301905092915050565b6000602082019050919050565b60006127b182612754565b6127bb818561275f565b93506127c683612770565b8060005b838110156127f75781516127de8882612780565b97506127e983612799565b9250506001810190506127ca565b5085935050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b60208201600082015161284660008501826125c2565b50505050565b602082016000820151612862600085018261225a565b50505050565b60e08201600082015161287e6000850182612284565b5060208201516128916020850182612830565b5060408201516128a46040850182612830565b5060608201516128b76060850182612830565b5060808201516128ca608085018261284c565b5060a08201516128dd60a085018261284c565b5060c08201516128f060c085018261284c565b50505050565b60006129028383612868565b60e08301905092915050565b6000602082019050919050565b600061292682612804565b612930818561280f565b935061293b83612820565b8060005b8381101561296c57815161295388826128f6565b975061295e8361290e565b92505060018101905061293f565b5085935050505092915050565b60608201600082015161298f6000850182612269565b5060208201516129a260208501826125c2565b5060408201516129b56040850182612284565b50505050565b6000610880830160008301516129d46000860182612229565b5060208301516129e76020860182612293565b5060408301516129fb6101e0860182612437565b506060830151612a0f610480860182612600565b506080830151612a236105a08601826126a3565b5060a0830151612a376105c08601826126b2565b5060c0830151612a4b6106c08601826126b2565b5060e08301518482036107c0860152612a6482826127a6565b9150506101008301518482036107e0860152612a80828261291b565b915050610120830151612a97610800860182612979565b50610140830151612aac610860860182612269565b508091505092915050565b6000612ac383836129bb565b905092915050565b6000602082019050919050565b6000612ae3826121ad565b612aed81856121b8565b935083602082028501612aff856121c9565b8060005b85811015612b3b5784840389528151612b1c8582612ab7565b9450612b2783612acb565b925060208a01995050600181019050612b03565b50829750879550505050505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b60a082016000820151612b8f6000850182612269565b506020820151612ba26020850182612269565b506040820151612bb560408501826125c2565b506060820151612bc8606085018261225a565b506080820151612bdb6080850182612269565b50505050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b6000612c1983836125c2565b60208301905092915050565b6000602082019050919050565b6000612c3d82612be1565b612c478185612bec565b9350612c5283612bfd565b8060005b83811015612c83578151612c6a8882612c0d565b9750612c7583612c25565b925050600181019050612c56565b5085935050505092915050565b600061034083016000830151612ca96000860182612229565b506020830151612cbc60208601826126a3565b506040830151612ccf6040860182612b79565b506060830151612ce260e08601826126b2565b506080830151612cf66101e08601826126b2565b5060a08301518482036102e0860152612d0f82826127a6565b91505060c0830151848203610300860152612d2a828261291b565b91505060e0830151848203610320860152612d458282612c32565b9150508091505092915050565b6000612d5e8383612c90565b905092915050565b6000602082019050919050565b6000612d7e82612b4d565b612d888185612b58565b935083602082028501612d9a85612b69565b8060005b85811015612dd65784840389528151612db78582612d52565b9450612dc283612d66565b925060208a01995050600181019050612d9e565b50829750879550505050505092915050565b60006040830160008301518482036000860152612e058282612ad8565b91505060208301518482036020860152612e1f8282612d73565b9150508091505092915050565b60006080830160008301518482036000860152612e498282612138565b91505060208301518482036020860152612e638282612138565b91505060408301518482036040860152612e7d8282612de8565b91505060608301518482036060860152612e978282612de8565b9150508091505092915050565b60006020820190508181036000830152612ebe8184612e2c565b905092915050565b60008060408385031215612edd57612edc611b26565b5b6000612eeb85828601611f09565b9250506020612efc85828601611fcc565b9150509250929050565b600082825260208201905092915050565b6000612f2282612098565b612f2c8185612f06565b9350612f3c8185602086016120b4565b612f4581611b35565b840191505092915050565b60006020820190508181036000830152612f6a8184612f17565b905092915050565b600060208284031215612f8857612f87611b26565b5b6000612f9684828501611f09565b91505092915050565b600061088083016000830151612fb86000860182612229565b506020830151612fcb6020860182612293565b506040830151612fdf6101e0860182612437565b506060830151612ff3610480860182612600565b5060808301516130076105a08601826126a3565b5060a083015161301b6105c08601826126b2565b5060c083015161302f6106c08601826126b2565b5060e08301518482036107c086015261304882826127a6565b9150506101008301518482036107e0860152613064828261291b565b91505061012083015161307b610800860182612979565b50610140830151613090610860860182612269565b508091505092915050565b600060208201905081810360008301526130b58184612f9f565b905092915050565b6000610340830160008301516130d66000860182612229565b5060208301516130e960208601826126a3565b5060408301516130fc6040860182612b79565b50606083015161310f60e08601826126b2565b5060808301516131236101e08601826126b2565b5060a08301518482036102e086015261313c82826127a6565b91505060c0830151848203610300860152613157828261291b565b91505060e08301518482036103208601526131728282612c32565b9150508091505092915050565b6000602082019050818103600083015261319981846130bd565b905092915050565b600080600080600060a086880312156131bd576131bc611b26565b5b60006131cb88828901611c57565b95505060206131dc88828901611c8d565b94505060406131ed88828901611c8d565b93505060606131fe88828901611c8d565b925050608086013567ffffffffffffffff81111561321f5761321e611b2b565b5b61322b88828901611d29565b9150509295509295909350565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60006132a182611c6c565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82036132d3576132d2613267565b5b600182019050919050565b6132e781611c1c565b82525050565b6132f681612238565b82525050565b613305816125a0565b82525050565b61331481612278565b82525050565b600060c08201905061332f60008301896132de565b61333c60208301886132ed565b61334960408301876132ed565b61335660608301866132ed565b61336360808301856132fc565b61337060a083018461330b565b979650505050505050565b61338481611c6c565b811461338f57600080fd5b50565b6000815190506133a18161337b565b92915050565b6000815190506133b681611c76565b92915050565b6133c581612278565b81146133d057600080fd5b50565b6000815190506133e2816133bc565b92915050565b60006101c082840312156133ff576133fe611bf2565b5b61340a6101c0611ba6565b9050600061341a84828501613392565b600083015250602061342e84828501613392565b602083015250604061344284828501613392565b604083015250606061345684828501613392565b606083015250608061346a84828501613392565b60808301525060a061347e848285016133a7565b60a08301525060c0613492848285016133a7565b60c08301525060e06134a684828501613392565b60e0830152506101006134bb84828501613392565b610100830152506101206134d184828501613392565b610120830152506101406134e784828501613392565b610140830152506101606134fd848285016133d3565b61016083015250610180613513848285016133d3565b610180830152506101a0613529848285016133d3565b6101a08301525092915050565b60006101c0828403121561354d5761354c611b26565b5b600061355b848285016133e8565b91505092915050565b60006080828403121561357a57613579611bf2565b5b6135846080611ba6565b9050600061359484828501613392565b60008301525060206135a884828501613392565b60208301525060406135bc84828501613392565b60408301525060606135d084828501613392565b60608301525092915050565b6000604082840312156135f2576135f1611bf2565b5b6135fc6040611ba6565b9050600061360c84828501613392565b600083015250602061362084828501613392565b60208301525092915050565b60006102a0828403121561364357613642611bf2565b5b61364e610220611ba6565b9050600061365e84828501613392565b600083015250602061367284828501613392565b602083015250604061368684828501613392565b604083015250606061369a84828501613392565b60608301525060806136ae84828501613392565b60808301525060a06136c284828501613392565b60a08301525060c06136d684828501613392565b60c08301525060e06136ea84828501613392565b60e0830152506101006136ff84828501613392565b6101008301525061012061371584828501613392565b6101208301525061014061372b84828501613392565b6101408301525061016061374184828501613564565b610160830152506101e0613757848285016135dc565b6101808301525061022061376d84828501613392565b6101a08301525061024061378384828501613392565b6101c083015250610260613799848285016133a7565b6101e0830152506102806137af848285016133d3565b6102008301525092915050565b60006102a082840312156137d3576137d2611b26565b5b60006137e18482850161362c565b91505092915050565b6137f381612596565b81146137fe57600080fd5b50565b600081519050613810816137ea565b92915050565b60006040828403121561382c5761382b611bf2565b5b6138366040611ba6565b9050600061384684828501613801565b600083015250602061385a84828501613801565b60208301525092915050565b6000610120828403121561387d5761387c611bf2565b5b613888610100611ba6565b90506000613898848285016133a7565b60008301525060206138ac848285016133a7565b60208301525060406138c084828501613392565b60408301525060606138d484828501613392565b60608301525060806138e884828501613392565b60808301525060a06138fc84828501613392565b60a08301525060c061391084828501613816565b60c08301525061010061392584828501613801565b60e08301525092915050565b6000610120828403121561394857613947611b26565b5b600061395684828501613866565b91505092915050565b6000610100828403121561397657613975611bf2565b5b613981610100611ba6565b90506000613991848285016133a7565b60008301525060206139a584828501613392565b60208301525060406139b984828501613392565b60408301525060606139cd84828501613392565b60608301525060806139e184828501613392565b60808301525060a06139f584828501613392565b60a08301525060c0613a0984828501613801565b60c08301525060e0613a1d84828501613801565b60e08301525092915050565b60006101008284031215613a4057613a3f611b26565b5b6000613a4e8482850161395f565b91505092915050565b6000613a6282611c6c565b9150613a6d83611c6c565b9250828203905081811115613a8557613a84613267565b5b92915050565b6000613a9682611c6c565b9150613aa183611c6c565b9250828201905080821115613ab957613ab8613267565b5b92915050565b6000613aca82611c1c565b9050919050565b613ada81613abf565b8114613ae557600080fd5b50565b600081519050613af781613ad1565b92915050565b600060208284031215613b1357613b12611b26565b5b6000613b2184828501613ae8565b91505092915050565b613b3381611c6c565b82525050565b6000602082019050613b4e6000830184613b2a565b92915050565b600060208284031215613b6a57613b69611bf2565b5b613b746020611ba6565b90506000613b8484828501613801565b60008301525092915050565b600060208284031215613ba657613ba5611bf2565b5b613bb06020611ba6565b90506000613bc084828501613392565b60008301525092915050565b600060e08284031215613be257613be1611bf2565b5b613bec60e0611ba6565b90506000613bfc848285016133d3565b6000830152506020613c1084828501613b54565b6020830152506040613c2484828501613b54565b6040830152506060613c3884828501613b54565b6060830152506080613c4c84828501613b90565b60808301525060a0613c6084828501613b90565b60a08301525060c0613c7484828501613b90565b60c08301525092915050565b600060e08284031215613c9657613c95611b26565b5b6000613ca484828501613bcc565b91505092915050565b600060608284031215613cc357613cc2611bf2565b5b613ccd6060611ba6565b90506000613cdd848285016133a7565b6000830152506020613cf184828501613801565b6020830152506040613d05848285016133d3565b60408301525092915050565b600060608284031215613d2757613d26611b26565b5b6000613d3584828501613cad565b91505092915050565b600060208284031215613d5457613d53611b26565b5b6000613d62848285016133a7565b91505092915050565b6000602082019050613d8060008301846132de565b92915050565b600060a08284031215613d9c57613d9b611bf2565b5b613da660a0611ba6565b90506000613db6848285016133a7565b6000830152506020613dca848285016133a7565b6020830152506040613dde84828501613801565b6040830152506060613df284828501613392565b6060830152506080613e06848285016133a7565b60808301525092915050565b600060a08284031215613e2857613e27611b26565b5b6000613e3684828501613d86565b91505092915050565b6000613e4a82611c1c565b9050919050565b613e5a81613e3f565b8114613e6557600080fd5b50565b600081519050613e7781613e51565b92915050565b600060208284031215613e9357613e92611b26565b5b6000613ea184828501613e68565b91505092915050565b6000604082019050613ebf60008301856132de565b613ecc6020830184613b2a565b9392505050565b6000602082019050613ee860008301846132fc565b92915050565b600060208284031215613f0457613f03611b26565b5b6000613f1284828501613801565b91505092915050565b6000606082019050613f306000830186613b2a565b613f3d6020830185613b2a565b8181036040830152613f4f8184612f17565b9050949350505050565b60008160e01c9050919050565b600060033d1115613f855760046000803e613f82600051613f59565b90505b90565b600060443d1061401557613f9a611b1c565b60043d036004823e80513d602482011167ffffffffffffffff82111715613fc2575050614015565b808201805167ffffffffffffffff811115613fe05750505050614015565b80602083010160043d038501811115613ffd575050505050614015565b61400c82602001850186611b75565b82955050505050505b90565b60008060233d1115614035576020600460003e6001915060005190505b9091565b6000819050919050565b61405461404f82611c6c565b614039565b82525050565b60006140668284614043565b6020820191508190509291505056fea26469706673582212204170c7dcaee637da9bd2e91f36ce6f2becc74ac76ab3644a517dc1b16a04d54964736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
