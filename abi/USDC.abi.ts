@@ -1,4 +1,4 @@
-const USDC = [
+export const USDC = [
   {
     constant: true,
     inputs: [],
@@ -402,4 +402,3 @@ const USDC = [
     type: "event",
   },
 ] as const;
-export default USDC;

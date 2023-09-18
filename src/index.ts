@@ -26,7 +26,7 @@ import {
 } from "viem";
 import { mnemonicToAccount } from "viem/accounts";
 import { MaxUint256 } from "./constants/units";
-import USDC from "@abi/USDC.abi";
+import { USDC } from "@abi/USDC.abi";
 import { MultiInvoker2Addresses, USDCAddresses } from "./constants/contracts";
 import { PositionSide2 } from "./constants/markets";
 console.log(" ");
@@ -44,6 +44,7 @@ if (chainId && !isSupportedChain(chainId)) throw new Error("Unsupported Chain");
 const AlchemyProdKey = process.env.ALCHEMY_KEY;
 if (!AlchemyProdKey) throw new Error("Missing alchemy key configuration");
 
+// Test Mnemonic
 const mnemonic =
   "liar region immune wait pretty cause art loop absorb fitness narrow amount";
 

@@ -65,9 +65,9 @@ import { MultiInvoker2Action, ProductSnapshot } from "@t/perennial";
 
 import LensArtifact from "../../artifacts/Lens.json";
 
-import MarketFactoryAbi from "@abi/MarketFactory.abi";
-import ERC20 from "@abi/ERC20.abi";
-import MultiInvoker2Abi from "@abi/MultiInvoker2.abi";
+import { MarketFactoryAbi } from "@abi/MarketFactory.abi";
+import { ERC20 } from "@abi/ERC20.abi";
+import { MultiInvoker2Abi } from "@abi/MultiInvoker2.abi";
 
 export type ProductSnapshotWithTradeLimitations = ProductSnapshot & {
   canOpenMaker: boolean;

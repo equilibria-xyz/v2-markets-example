@@ -447,10 +447,10 @@ export function calcLpUtilization(marketSnapshot?: MarketSnapshot) {
   const majorPosition = majorSide === PositionSide2.long ? long : short;
   const minorPosition = majorSide === PositionSide2.long ? short : long;
 
-  const lpUtilization = Big6Math.div(
-    Big6Math.sub(majorPosition, minorPosition),
-    maker
-  );
+  const lpUtilization =
+    maker > 0n
+      ? Big6Math.div(Big6Math.sub(majorPosition, minorPosition), maker)
+      : 0n;
 
   return {
     lpUtilization,

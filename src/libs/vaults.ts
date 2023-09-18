@@ -1,8 +1,4 @@
 import { EvmPriceServiceConnection } from "@pythnetwork/pyth-evm-js";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useCallback } from "react";
-import { useIntl } from "react-intl";
 import {
   Address,
   Hex,
@@ -17,8 +13,6 @@ import {
   toHex,
   zeroAddress,
 } from "viem";
-import { useNetwork, usePublicClient, useWalletClient } from "wagmi";
-import { waitForTransaction } from "wagmi/actions";
 
 import {
   DSUAddresses,
@@ -36,19 +30,14 @@ import { Big18Math } from "@/utils/big18Utils";
 import { buildCommitPrice, buildUpdateVault } from "@/utils/multiinvoker2";
 import { buildCommitmentsForOracles } from "@/utils/pythUtils";
 
-import { VaultAbi } from "@abi/v2/Vault.abi";
-import { VaultLens2Abi } from "@abi/v2/VaultLens2.abi";
+import { VaultAbi } from "@abi/Vault.abi";
+import { VaultLens2Abi } from "@abi/VaultLens2.abi";
 
-import LensArtifact from "../../../lens/artifacts/contracts/Lens.sol/Lens.json";
+import LensArtifact from "../../artifacts/Lens.json";
 import VaultLensArtifact from "../../../lens/artifacts/contracts/Lens.sol/VaultLens.json";
-import { bufferGasLimit, getVaultContract } from "../../utils/contractUtils";
+import { bufferGasLimit, getVaultContract } from "@/utils/contractUtils";
 import { useMultiInvoker2, useUSDC, useVaultFactory } from "../contracts";
-import {
-  MarketOracles,
-  useMarketOracles2,
-  useRefreshKeysOnPriceUpdates2,
-} from "./markets";
-import { useAddress, useChainId, usePyth, useRPCProviderUrl } from "../network";
+import { MarketOracles } from "./markets";
 
 export type VaultSnapshots = NonNullable<
   Awaited<ReturnType<typeof useVaultSnapshots2>>["data"]

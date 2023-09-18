@@ -1,4 +1,4 @@
-const ERC20 = [
+export const ERC20 = [
   {
     constant: true,
     inputs: [],
@@ -220,4 +220,3 @@ const ERC20 = [
     type: "event",
   },
 ] as const;
-export default ERC20;

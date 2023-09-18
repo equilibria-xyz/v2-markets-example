@@ -13,6 +13,8 @@ import { notEmpty } from "@/utils/arrayUtils";
 export enum SupportedAsset {
   btc = "btc",
   eth = "eth",
+  sol = "sol",
+  matic = "matic",
 }
 
 export enum QuoteCurrency {
@@ -79,6 +81,30 @@ export const AssetMetadata: AssetMetadata = {
       "0xca80ba6dc32e08d06f1aa886011eed1d77c77be9eb761cc10d72b7d0a2fd57a6",
     transform: linearTransform,
   },
+  sol: {
+    symbol: "SOL-USD",
+    name: "Solana",
+    displayDecimals: 4,
+    baseCurrency: SupportedAsset.sol,
+    quoteCurrency: QuoteCurrency.usd,
+    pythFeedId:
+      "0xef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d",
+    pythFeedIdTestnet:
+      "0xfe650f0367d4a7ef9815a593ea15d36593f0643aaaf0149bb04be67ab851decd",
+    transform: linearTransform,
+  },
+  matic: {
+    symbol: "MATIC-USD",
+    name: "Polygon",
+    displayDecimals: 4,
+    baseCurrency: SupportedAsset.matic,
+    quoteCurrency: QuoteCurrency.usd,
+    pythFeedId:
+      "0x5de33a9112c2b700b8d30b8a3402c103578ccfa2765696471cc672bd5cf6ac52",
+    pythFeedIdTestnet:
+      "0xd2c2c1f2bba8e0964f9589e060c2ee97f5e19057267ac3284caef3bd50bd2cb5",
+    transform: linearTransform,
+  },
 };
 
 export const ChainMarkets2: {
@@ -87,8 +113,10 @@ export const ChainMarkets2: {
   };
 } = {
   [arbitrumGoerli.id]: {
-    eth: getAddress("0x39c5795f3B3F3C63E71d6c1274682496Bd981fcA"),
-    btc: getAddress("0xdd3E45E6c5A01420C3e98335366161769A4A76b4"),
+    eth: getAddress("0xf5Ae549Af3b600086F555aA4e41f3BB8A2EfEf4c"),
+    btc: getAddress("0x55Dc0A47Eb29D8dbeADECf864c7dD64196eFF2a2"),
+    sol: getAddress("0x4443Ec03A347394D2CA331638B809A17617497af"),
+    matic: getAddress("0x40a4b331E95D409cC9CEdDcA9eFDf5ff58da4344"),
   },
   [arbitrum.id]: {},
   [baseGoerli.id]: {},

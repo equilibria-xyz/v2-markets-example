@@ -47,7 +47,7 @@ export const MultiInvoker2Addresses: AddressMapping = {
   [goerli.id]: zeroAddress,
   [mainnet.id]: zeroAddress,
   [arbitrum.id]: zeroAddress,
-  [arbitrumGoerli.id]: getAddress("0x499A1Bdb6E0EF5cFDCd60Afc4c3Bd9E0664601cB"),
+  [arbitrumGoerli.id]: getAddress("0x9F6f72Cf419121090C761D0488f61D2534Da4196"),
   [baseGoerli.id]: zeroAddress,
 };
 
@@ -55,7 +55,7 @@ export const MarketFactoryAddresses: AddressMapping = {
   [goerli.id]: zeroAddress,
   [mainnet.id]: zeroAddress,
   [arbitrum.id]: zeroAddress,
-  [arbitrumGoerli.id]: getAddress("0x9B8411E71387f89e50efb6Af5D8C6879FbF0261D"),
+  [arbitrumGoerli.id]: getAddress("0x8D8903B294B358BA1B5d91FB838e5dC35370c7D2"),
   [baseGoerli.id]: zeroAddress,
 };
 
@@ -63,7 +63,7 @@ export const VaultFactoryAddresses: AddressMapping = {
   [goerli.id]: zeroAddress,
   [mainnet.id]: zeroAddress,
   [arbitrum.id]: zeroAddress,
-  [arbitrumGoerli.id]: getAddress("0x1210Fa0bFCf5b698469124270d31Cf768E616fD8"),
+  [arbitrumGoerli.id]: getAddress("0x97B34BA2FD1ff8Ce18b3bC7b05D1fcb87E95D6fc"),
   [baseGoerli.id]: zeroAddress,
 };
 
@@ -71,7 +71,7 @@ export const OracleFactoryAddresses: AddressMapping = {
   [goerli.id]: zeroAddress,
   [mainnet.id]: zeroAddress,
   [arbitrum.id]: zeroAddress,
-  [arbitrumGoerli.id]: getAddress("0x672A82d9177de46dB778a7b2cca389d0f4fb26af"),
+  [arbitrumGoerli.id]: getAddress("0xaf09499A04a9A7c6E1fD5320ebd86E1A817d6D80"),
   [baseGoerli.id]: zeroAddress,
 };
 
